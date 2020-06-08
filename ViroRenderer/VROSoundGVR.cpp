@@ -28,7 +28,7 @@
 #include "VROSoundGVR.h"
 #include "VROSoundDataGVR.h"
 #include "VROLog.h"
-#include "vr/gvr/capi/include/gvr_audio.h"
+//#include "vr/gvr/capi/include/gvr_audio.h"
 
 std::shared_ptr<VROSoundGVR> VROSoundGVR::create(std::string resource, VROResourceType resourceType,
                                                  std::shared_ptr<gvr::AudioApi> gvrAudio,
@@ -54,7 +54,7 @@ VROSoundGVR::VROSoundGVR(std::string resource, VROResourceType resourceType,
     _type = type;
     std::shared_ptr<VROSoundDataGVR> data = VROSoundDataGVR::create(resource, resourceType);
     _data = std::dynamic_pointer_cast<VROSoundData>(data);
-    _gvrRolloffType = GVR_AUDIO_ROLLOFF_NONE;
+    //_gvrRolloffType = GVR_AUDIO_ROLLOFF_NONE;
 }
 
 VROSoundGVR::VROSoundGVR(std::shared_ptr<VROSoundData> data, std::shared_ptr<gvr::AudioApi> gvrAudio,
@@ -62,7 +62,7 @@ VROSoundGVR::VROSoundGVR(std::shared_ptr<VROSoundData> data, std::shared_ptr<gvr
     _data(data),
     _gvrAudio(gvrAudio) {
     _type = type;
-    _gvrRolloffType = GVR_AUDIO_ROLLOFF_NONE;
+    //_gvrRolloffType = GVR_AUDIO_ROLLOFF_NONE;
 }
 
 VROSoundGVR::~VROSoundGVR() {
@@ -71,18 +71,18 @@ VROSoundGVR::~VROSoundGVR() {
         return;
     }
     
-    if (gvrAudio && gvrAudio->IsSoundPlaying(_audioId)) {
-        gvrAudio->PauseSound(_audioId);
-    }
-    if (gvrAudio && _data) {
-        gvrAudio->UnloadSoundfile(_data->getLocalFilePath());
-    }
+    //if (gvrAudio && gvrAudio->IsSoundPlaying(_audioId)) {
+    //    gvrAudio->PauseSound(_audioId);
+   // }
+    //if (gvrAudio && _data) {
+    //    gvrAudio->UnloadSoundfile(_data->getLocalFilePath());
+   // }
 }
 
 void VROSoundGVR::setup() {
     _data->setDelegate(shared_from_this());
     if (_ready) {
-        _gvrAudio.lock()->PreloadSoundfile(_data->getLocalFilePath());
+    //    _gvrAudio.lock()->PreloadSoundfile(_data->getLocalFilePath());
     }
 }
 
@@ -96,14 +96,14 @@ void VROSoundGVR::play() {
         return;
     }
 
-    gvrAudio->Resume();
+    //gvrAudio->Resume();
 
     // Check if a loaded sound has become invalid; if so, we need
     // to stop it (to destroy it), and reload it
-    if (_audioId != -1 && !gvrAudio->IsSourceIdValid(_audioId)) {
-        gvrAudio->StopSound(_audioId);
-        _audioId = -1;
-    }
+    //if (_audioId != -1 && !gvrAudio->IsSourceIdValid(_audioId)) {
+    //    gvrAudio->StopSound(_audioId);
+    //    _audioId = -1;
+    //}
 
     // create the sound if it hasn't been created yet.
     if (_audioId == -1) {
@@ -118,21 +118,21 @@ void VROSoundGVR::play() {
 #endif
         switch (_type) {
             case VROSoundType::Normal:
-                _audioId = gvrAudio->CreateStereoSound(path);
+               // _audioId = gvrAudio->CreateStereoSound(path);
                 break;
             case VROSoundType::Spatial:
-                _audioId = gvrAudio->CreateSoundObject(path);
+                //_audioId = gvrAudio->CreateSoundObject(path);
                 break;
             case VROSoundType::SoundField:
-                _audioId = gvrAudio->CreateSoundfield(path);
+                //_audioId = gvrAudio->CreateSoundfield(path);
                 break;
         }
 
         setProperties();
-        gvrAudio->PlaySound(_audioId, _loop);
+        //gvrAudio->PlaySound(_audioId, _loop);
     }
     else {
-        gvrAudio->ResumeSound(_audioId);
+        //gvrAudio->ResumeSound(_audioId);
     }
 
     _paused = false;
@@ -144,7 +144,7 @@ void VROSoundGVR::pause() {
         return;
     }
     if (_audioId != -1) {
-        gvrAudio->PauseSound(_audioId);
+        //gvrAudio->PauseSound(_audioId);
         _paused = true;
     }
 }
@@ -155,7 +155,7 @@ void VROSoundGVR::setVolume(float volume) {
     std::shared_ptr<gvr::AudioApi> gvrAudio = _gvrAudio.lock();
     if (gvrAudio && _audioId != -1) {
         if (!_muted) {
-            gvrAudio->SetSoundVolume(_audioId, volume);
+            //gvrAudio->SetSoundVolume(_audioId, volume);
         }
     }
 }
@@ -166,9 +166,9 @@ void VROSoundGVR::setMuted(bool muted) {
     std::shared_ptr<gvr::AudioApi> gvrAudio = _gvrAudio.lock();
     if (gvrAudio && _audioId != -1) {
         if (muted) {
-            gvrAudio->SetSoundVolume(_audioId, 0);
+            //gvrAudio->SetSoundVolume(_audioId, 0);
         } else {
-            gvrAudio->SetSoundVolume(_audioId, _volume);
+            //gvrAudio->SetSoundVolume(_audioId, _volume);
         }
     }
 }
@@ -183,7 +183,7 @@ void VROSoundGVR::setLoop(bool loop) {
     if (gvrAudio && _audioId != -1) {
         // We have to stop the sound and recreate it to change the
         // _loop setting
-        gvrAudio->StopSound(_audioId);
+        //gvrAudio->StopSound(_audioId);
         if (!_paused) {
             play();
         }
@@ -199,8 +199,8 @@ void VROSoundGVR::setRotation(VROQuaternion rotation) {
     
     std::shared_ptr<gvr::AudioApi> gvrAudio = _gvrAudio.lock();
     if (gvrAudio && _audioId != -1 && _type == VROSoundType::SoundField) {
-        gvrAudio->SetSoundfieldRotation(_audioId,
-                                         {rotation.X, rotation.Y, rotation.Z, rotation.W});
+        //gvrAudio->SetSoundfieldRotation(_audioId,
+    //                                     {rotation.X, rotation.Y, rotation.Z, rotation.W});
     }
 }
 
@@ -217,8 +217,8 @@ void VROSoundGVR::setTransformedPosition(VROVector3f transformedPosition) {
     
     std::shared_ptr<gvr::AudioApi> gvrAudio = _gvrAudio.lock();
     if (gvrAudio && _audioId != -1 && _type == VROSoundType::Spatial) {
-        gvrAudio->SetSoundObjectPosition(_audioId, _transformedPosition.x, _transformedPosition.y,
-                                          _transformedPosition.z);
+        //gvrAudio->SetSoundObjectPosition(_audioId, _transformedPosition.x, _transformedPosition.y,
+        //                                  _transformedPosition.z);
     }
 }
 
@@ -230,20 +230,20 @@ void VROSoundGVR::setDistanceRolloffModel(VROSoundRolloffModel model, float minD
     
     switch(model) {
         case VROSoundRolloffModel::Linear:
-            _gvrRolloffType = GVR_AUDIO_ROLLOFF_LINEAR;
+            //_gvrRolloffType = GVR_AUDIO_ROLLOFF_LINEAR;
             break;
         case VROSoundRolloffModel::Logarithmic:
-            _gvrRolloffType = GVR_AUDIO_ROLLOFF_LOGARITHMIC;
+            //_gvrRolloffType = GVR_AUDIO_ROLLOFF_LOGARITHMIC;
             break;
         case VROSoundRolloffModel::None:
-            _gvrRolloffType = GVR_AUDIO_ROLLOFF_NONE;
+            //_gvrRolloffType = GVR_AUDIO_ROLLOFF_NONE;
             break;
     }
     
     std::shared_ptr<gvr::AudioApi> gvrAudio = _gvrAudio.lock();
     if (gvrAudio && _audioId != -1 && _type == VROSoundType::Spatial) {
-        gvrAudio->SetSoundObjectDistanceRolloffModel(_audioId, (gvr_audio_distance_rolloff_type) _gvrRolloffType,
-                                                      _rolloffMinDistance, _rolloffMaxDistance);
+        //gvrAudio->SetSoundObjectDistanceRolloffModel(_audioId, (gvr_audio_distance_rolloff_type) _gvrRolloffType,
+        //                                              _rolloffMinDistance, _rolloffMaxDistance);
     }
 }
 
@@ -276,15 +276,15 @@ void VROSoundGVR::setProperties() {
         return;
     }
 
-    gvrAudio->SetSoundVolume(_audioId, _muted ? 0 : _volume);
+    //gvrAudio->SetSoundVolume(_audioId, _muted ? 0 : _volume);
     
-    if (_type == VROSoundType::Spatial) {
-        gvrAudio->SetSoundObjectPosition(_audioId, _transformedPosition.x, _transformedPosition.y,
-                                          _transformedPosition.z);
-        gvrAudio->SetSoundObjectDistanceRolloffModel(_audioId, (gvr_audio_distance_rolloff_type) _gvrRolloffType,
-                                                      _rolloffMinDistance, _rolloffMaxDistance);
-    } else if (_type == VROSoundType::SoundField) {
-        gvrAudio->SetSoundfieldRotation(_audioId,
-                                         {_rotation.X, _rotation.Y, _rotation.Z, _rotation.W});
-    }
+    //if (_type == VROSoundType::Spatial) {
+        //gvrAudio->SetSoundObjectPosition(_audioId, _transformedPosition.x, _transformedPosition.y,
+    //                                      _transformedPosition.z);
+        //gvrAudio->SetSoundObjectDistanceRolloffModel(_audioId, (gvr_audio_distance_rolloff_type) _gvrRolloffType,
+    //                                                  _rolloffMinDistance, _rolloffMaxDistance);
+    //} else if (_type == VROSoundType::SoundField) {
+        //gvrAudio->SetSoundfieldRotation(_audioId,
+    //                                     {_rotation.X, _rotation.Y, _rotation.Z, _rotation.W});
+    //}
 }

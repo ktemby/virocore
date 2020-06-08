@@ -26,7 +26,8 @@
 
 #include "VROGVRUtil.h"
 
-VROMatrix4f VROGVRUtil::toMatrix4f(const gvr::Mat4f &glm) {
+/*
+ VROMatrix4f VROGVRUtil::toMatrix4f(const gvr::Mat4f &glm) {
     float m[16] = {
             glm.m[0][0], glm.m[1][0], glm.m[2][0], glm.m[3][0],
             glm.m[0][1], glm.m[1][1], glm.m[2][1], glm.m[3][1],
@@ -37,7 +38,7 @@ VROMatrix4f VROGVRUtil::toMatrix4f(const gvr::Mat4f &glm) {
     return VROMatrix4f(m);
 }
 
-gvr::Mat4f VROGVRUtil::toGVRMat4f(VROMatrix4f m) {
+// gvr::Mat4f VROGVRUtil::toGVRMat4f(VROMatrix4f m) {
     gvr::Mat4f glm;
     glm.m[0][0] = m[0];
     glm.m[1][0] = m[1];
@@ -59,3 +60,4 @@ gvr::Mat4f VROGVRUtil::toGVRMat4f(VROMatrix4f m) {
     return glm;
 }
 
+*/

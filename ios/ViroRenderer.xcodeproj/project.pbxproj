@@ -261,7 +261,6 @@
 		13B6730C212229B20040FB72 /* libLinearMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EC65851EB3ECE200FE220E /* libLinearMath.a */; };
 		13B6730D212229B20040FB72 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1664A51E5E43260062EBCE /* Accelerate.framework */; };
 		13B6730E212229B20040FB72 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDDE2111CD00F2600674DE2 /* CoreText.framework */; };
-		13B67318212229B20040FB72 /* Pods_ViroKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574D44685DE21A586EEBF25D /* Pods_ViroKit.framework */; };
 		13B6731A212229B20040FB72 /* VROPolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = A5B4AF0720535CDA0006D970 /* VROPolygon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		13B6731B212229B20040FB72 /* VROFixedParticleEmitter.h in Headers */ = {isa = PBXBuildFile; fileRef = A5B433EA204E64A500E9EE53 /* VROFixedParticleEmitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		13B6731C212229B20040FB72 /* VROPencil.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FD2A5041F81273F00E831A6 /* VROPencil.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -585,6 +584,7 @@
 		13BC8FAA21507E4700479BE0 /* VROQuaternion.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F4DCE2E1BFA8D5D00061DD7 /* VROQuaternion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		55EE8FA2030FEBF9DA70D28E /* libPods-ViroKit_static_lib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 782820C4A876FF888106C852 /* libPods-ViroKit_static_lib.a */; };
 		647A0F137242382CD008BE56 /* Pods_ViroSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A7748CC8659A11C76D30F3 /* Pods_ViroSample.framework */; };
+		7AE7D66428852A0DFD242AA2 /* Pods_ViroKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 191120615F905D8836DFA02F /* Pods_ViroKit.framework */; };
 		8A11C8F51EF5AB9D0003E829 /* VROARDeclarativePlane.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A11C8F41EF5A8E30003E829 /* VROARDeclarativePlane.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8A11C8F81EF5B2270003E829 /* VROARConstraintMatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A11C8F61EF5B2270003E829 /* VROARConstraintMatcher.cpp */; };
 		8A11C8F91EF5B2270003E829 /* VROARConstraintMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A11C8F71EF5B2270003E829 /* VROARConstraintMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1556,7 +1556,7 @@
 		A5EC65B61EBFF57B00FE220E /* VROPhysicsBody.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5EC65B31EBFF42100FE220E /* VROPhysicsBody.cpp */; };
 		A5EC65B71EBFF5A100FE220E /* VROPhysicsBody.h in Headers */ = {isa = PBXBuildFile; fileRef = A5EC65B41EBFF42100FE220E /* VROPhysicsBody.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A5EC65B81EC004E100FE220E /* VROPhysicsShape.h in Headers */ = {isa = PBXBuildFile; fileRef = A5EC65941EBD16F000FE220E /* VROPhysicsShape.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EAD7E32D2DFA518AEAAB48C2 /* Pods_ViroKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574D44685DE21A586EEBF25D /* Pods_ViroKit.framework */; };
+		EAD7E32D2DFA518AEAAB48C2 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1609,10 +1609,10 @@
 		1331B62620C8A03500D1C5F5 /* libAWSCore-library.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libAWSCore-library.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1331B62820C8A03D00D1C5F5 /* libAWSDynamoDB-library.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libAWSDynamoDB-library.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B6747A212229B20040FB72 /* ViroKit_static_lib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ViroKit_static_lib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		191120615F905D8836DFA02F /* Pods_ViroKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViroKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D50EA9016C5481FBEA660D5 /* Pods-ViroARKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViroARKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViroARKit/Pods-ViroARKit.release.xcconfig"; sourceTree = "<group>"; };
 		369FA4D6365A69988D645538 /* Pods-ViroSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViroSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViroSample/Pods-ViroSample.release.xcconfig"; sourceTree = "<group>"; };
 		48567375A658D093284ACEDD /* libPods-ViroARKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ViroARKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		574D44685DE21A586EEBF25D /* Pods_ViroKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViroKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5900241E3CB603B31B8DDDDA /* Pods-ViroSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViroSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViroSample/Pods-ViroSample.debug.xcconfig"; sourceTree = "<group>"; };
 		5F74787A42D418320F1E3362 /* Pods-ViroKit_static_lib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViroKit_static_lib.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViroKit_static_lib/Pods-ViroKit_static_lib.release.xcconfig"; sourceTree = "<group>"; };
 		69FBDCF89ECBB5500043C227 /* Pods-ViroARKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViroARKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViroARKit/Pods-ViroARKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -2578,7 +2578,6 @@
 				13B6730C212229B20040FB72 /* libLinearMath.a in Frameworks */,
 				13B6730D212229B20040FB72 /* Accelerate.framework in Frameworks */,
 				13B6730E212229B20040FB72 /* CoreText.framework in Frameworks */,
-				13B67318212229B20040FB72 /* Pods_ViroKit.framework in Frameworks */,
 				55EE8FA2030FEBF9DA70D28E /* libPods-ViroKit_static_lib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2612,7 +2611,8 @@
 				A5EC65891EB3ECE200FE220E /* libLinearMath.a in Frameworks */,
 				8F1664A61E5E43260062EBCE /* Accelerate.framework in Frameworks */,
 				8FDDE2121CD00F2600674DE2 /* CoreText.framework in Frameworks */,
-				EAD7E32D2DFA518AEAAB48C2 /* Pods_ViroKit.framework in Frameworks */,
+				EAD7E32D2DFA518AEAAB48C2 /* (null) in Frameworks */,
+				7AE7D66428852A0DFD242AA2 /* Pods_ViroKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3941,7 +3941,6 @@
 				8A07C1891ED8D8DA00757C29 /* AssetsLibrary.framework */,
 				8F1664A51E5E43260062EBCE /* Accelerate.framework */,
 				8FDDE2111CD00F2600674DE2 /* CoreText.framework */,
-				574D44685DE21A586EEBF25D /* Pods_ViroKit.framework */,
 				E7A7748CC8659A11C76D30F3 /* Pods_ViroSample.framework */,
 				1331B62820C8A03D00D1C5F5 /* libAWSDynamoDB-library.a */,
 				1331B62620C8A03500D1C5F5 /* libAWSCore-library.a */,
@@ -3955,6 +3954,7 @@
 				A5EC65851EB3ECE200FE220E /* libLinearMath.a */,
 				48567375A658D093284ACEDD /* libPods-ViroARKit.a */,
 				782820C4A876FF888106C852 /* libPods-ViroKit_static_lib.a */,
+				191120615F905D8836DFA02F /* Pods_ViroKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -5847,7 +5847,7 @@
 					"$(PROJECT_DIR)/Libraries/bullet/x86_64",
 					"$(PROJECT_DIR)/Libraries/harfbuzz/x86_64",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-isystem",
@@ -5856,8 +5856,6 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"GVRAudioSDK\"",
-					"-l\"GVRSDK\"",
 					"-l\"c++\"",
 					"-l\"z\"",
 					"-framework",
@@ -5876,10 +5874,6 @@
 					"\"CoreVideo\"",
 					"-framework",
 					"\"GLKit\"",
-					"-l",
-					"\"GTMSessionFetcher-library\"",
-					"-l",
-					"\"GoogleToolboxForMac-library\"",
 					"-framework",
 					"\"MediaPlayer\"",
 					"-framework",
@@ -5948,12 +5942,10 @@
 					"$(PROJECT_DIR)/Libraries/bullet/x86_64",
 					"$(PROJECT_DIR)/Libraries/harfbuzz/x86_64",
 				);
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"GVRAudioSDK\"",
-					"-l\"GVRSDK\"",
 					"-l\"c++\"",
 					"-l\"z\"",
 					"-framework",
@@ -5972,10 +5964,6 @@
 					"\"CoreVideo\"",
 					"-framework",
 					"\"GLKit\"",
-					"-l",
-					"\"GTMSessionFetcher-library\"",
-					"-l",
-					"\"GoogleToolboxForMac-library\"",
 					"-framework",
 					"\"MediaPlayer\"",
 					"-framework",

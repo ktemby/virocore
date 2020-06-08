@@ -1468,8 +1468,9 @@ std::map<std::string, std::string> VROPlatformConvertFromJavaMap(VRO_OBJECT java
 #if VRO_PLATFORM_IOS || VRO_PLATFORM_ANDROID
 
 #include "VROStringUtil.h"
-#include "vr/gvr/capi/include/gvr_audio.h"
+//#include "vr/gvr/capi/include/gvr_audio.h"
 
+/*
 int VROPlatformParseGVRAudioMaterial(std::string property) {
     if (VROStringUtil::strcmpinsensitive(property, "transparent")) {
         return GVR_AUDIO_MATERIAL_TRANSPARENT;
@@ -1492,7 +1493,7 @@ int VROPlatformParseGVRAudioMaterial(std::string property) {
     } else if (VROStringUtil::strcmpinsensitive(property, "glass_thick")) {
         return GVR_AUDIO_MATERIAL_GLASS_THICK;
     } else if (VROStringUtil::strcmpinsensitive(property, "grass")) {
-        return GVR_AUDIO_MATERIAL_GRASS;
+    //    return GVR_AUDIO_MATERIAL_GRASS;
     } else if (VROStringUtil::strcmpinsensitive(property, "linoleum_on_concrete")) {
         return GVR_AUDIO_MATERIAL_LINOLEUM_ON_CONCRETE;
     } else if (VROStringUtil::strcmpinsensitive(property, "marble")) {
@@ -1520,5 +1521,5 @@ int VROPlatformParseGVRAudioMaterial(std::string property) {
     }
     return GVR_AUDIO_MATERIAL_TRANSPARENT;
 }
-
+*/
 #endif

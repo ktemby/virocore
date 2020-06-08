@@ -28,13 +28,13 @@
 #define ANDROID_VROGVRUTIL_H
 
 #include "VROMatrix4f.h"
-#include "vr/gvr/capi/include/gvr_types.h"
+//#include "vr/gvr/capi/include/gvr_types.h"
 
 class VROGVRUtil {
 public:
 
-    static VROMatrix4f toMatrix4f(const gvr::Mat4f &glm);
-    static gvr::Mat4f toGVRMat4f(VROMatrix4f matrix);
+    // static VROMatrix4f toMatrix4f(const gvr::Mat4f &glm);
+    // static gvr::Mat4f toGVRMat4f(VROMatrix4f matrix);
 };
 
 

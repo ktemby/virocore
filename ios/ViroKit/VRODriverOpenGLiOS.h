@@ -37,7 +37,7 @@
 #include "VROPlatformUtil.h"
 #include "VROGVRUtil.h"
 #include "VROStringUtil.h"
-#include "vr/gvr/capi/include/gvr_audio.h"
+// #include "vr/gvr/capi/include/gvr_audio.h"
 
 class VRODriverOpenGLiOS : public VRODriverOpenGL {
     
@@ -66,29 +66,29 @@ public:
      */
     std::shared_ptr<gvr::AudioApi> activateGVRAudio() {
         if (!_gvrAudio) {
-            _gvrAudio = std::make_shared<gvr::AudioApi>();
-            _gvrAudio->Init(GVR_AUDIO_RENDERING_BINAURAL_HIGH_QUALITY);
+            // _gvrAudio = std::make_shared<gvr::AudioApi>();
+            // _gvrAudio->Init(GVR_AUDIO_RENDERING_BINAURAL_HIGH_QUALITY);
         }
         return _gvrAudio;
     }
     
     void willRenderFrame(const VRORenderContext &context) {
         if (_gvrAudio) {
-            _gvrAudio->SetHeadPose(VROGVRUtil::toGVRMat4f(context.getCamera().getLookAtMatrix()));
-            _gvrAudio->Update();
+            // _gvrAudio->SetHeadPose(VROGVRUtil::toGVRMat4f(context.getCamera().getLookAtMatrix()));
+            // _gvrAudio->Update();
         }
         VRODriverOpenGL::willRenderFrame(context);
     }
     
     void pause() {
         if (_gvrAudio) {
-            _gvrAudio->Pause();
+            // _gvrAudio->Pause();
         }
     }
     
     void resume() {
         if (_gvrAudio) {
-            _gvrAudio->Resume();
+            //_gvrAudio->Resume();
         }
     }
     
